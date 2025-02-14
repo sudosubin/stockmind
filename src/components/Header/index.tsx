@@ -9,7 +9,7 @@ export const Header = () => {
         <View>
           <Image src="/vite.svg" alt="Logo" width="24px" />
         </View>
-        <View>
+        <View className={style.right}>
           <Button href={routes.steps.start} color="primary" variant="faded">
             시작하기
           </Button>
