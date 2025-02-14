@@ -2,6 +2,9 @@
   "name": "stockmind",
   "private": true,
   "type": "module",
+  "imports": {
+    "#/*": "./src/*"
+  },
   "scripts": {
     "build": "vite build",
     "dev": "vite --port 3000",
