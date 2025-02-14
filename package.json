@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "dev": "vite",
     "prepare": "simple-git-hooks",
     "preview": "vite preview"
   },
@@ -15,7 +15,8 @@
     "*.{js,ts,jsx,tsx}": [
       "biome lint --write",
       "biome format --write"
-    ]
+    ],
+    "package.json": "sort-package-json"
   },
   "dependencies": {
     "preact": "^10.25.4",
@@ -26,6 +27,7 @@
     "@preact/preset-vite": "^2.10.1",
     "lint-staged": "^15.4.3",
     "simple-git-hooks": "^2.11.1",
+    "sort-package-json": "^2.14.0",
     "vite": "^6.1.0"
   }
 }
