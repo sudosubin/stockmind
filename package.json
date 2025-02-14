@@ -5,7 +5,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "prepare": "simple-git-hooks",
     "preview": "vite preview"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bun run lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "biome lint --write",
+      "biome format --write"
+    ]
   },
   "dependencies": {
     "preact": "^10.25.4",
@@ -14,6 +24,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@preact/preset-vite": "^2.10.1",
+    "lint-staged": "^15.4.3",
+    "simple-git-hooks": "^2.11.1",
     "vite": "^6.1.0"
   }
 }
