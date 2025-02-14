@@ -12,6 +12,7 @@
     "preact-iso": "^2.9.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@preact/preset-vite": "^2.10.1",
     "vite": "^6.1.0"
   }
