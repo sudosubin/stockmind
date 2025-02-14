@@ -1,14 +1,15 @@
 import { Button, Icon, Link, View } from "reshaped";
 import * as style from "#/components/Footer/style.css";
 import { GitHub } from "#/icons";
+import { t } from "#/shared/i18n";
 
 export const Footer = () => {
   return (
     <View className={style.view} as="footer">
       <View>
-        Made by{" "}
+        {t("_.footer.made-by.label")}
         <Link href="https://github.com/sudosubin" variant="plain">
-          sudosubin
+          {t("_.footer.made-by.author")}
         </Link>
       </View>
       <View>
