@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "preact": "^10.25.4",
-    "preact-iso": "^2.9.0"
+    "preact-iso": "^2.9.0",
+    "reshaped": "^3.3.11"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
