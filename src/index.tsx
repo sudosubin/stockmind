@@ -4,6 +4,7 @@ import { Reshaped } from "reshaped";
 import { Header } from "#/components/Header.jsx";
 import { Home } from "#/pages/Home/index.jsx";
 import { NotFound } from "#/pages/_404";
+import "#/shared/modern-normalize.css";
 import "reshaped/themes/reshaped/theme.css";
 
 export function App() {
