@@ -1,3 +1,29 @@
+export const ArrowRight = () => {
+  return (
+    <svg
+      viewBox="0 0 21 20"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+    >
+      <path
+        d="M4.66666 10H16.3333"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M10.5 4.16675L16.3333 10.0001L10.5 15.8334"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
 export const GitHub = () => {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
