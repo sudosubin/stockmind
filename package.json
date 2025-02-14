@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite",
+    "dev": "vite --port 3000",
     "prepare": "simple-git-hooks",
     "preview": "vite preview"
   },
