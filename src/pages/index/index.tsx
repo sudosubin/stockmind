@@ -8,7 +8,7 @@ import { ArrowRight } from "#/icons";
 import * as style from "#/pages/index/style.css";
 import { t } from "#/shared/i18n";
 
-export const Index = () => {
+export const IndexPage = () => {
   return (
     <>
       <Header />

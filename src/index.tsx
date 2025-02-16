@@ -5,14 +5,14 @@ import { LocationProvider, Route, Router } from "preact-iso";
 import { Reshaped } from "reshaped";
 import { routes } from "#/constants/routes";
 import { NotFound } from "#/pages/404";
-import { Index } from "#/pages/index";
+import { IndexPage } from "#/pages/index";
 
 const App = () => {
   return (
     <LocationProvider>
       <Reshaped theme="reshaped" defaultColorMode="light">
         <Router>
-          <Route path={routes.index} component={Index} />
+          <Route path={routes.index} component={IndexPage} />
           <Route default component={NotFound} />
         </Router>
       </Reshaped>
