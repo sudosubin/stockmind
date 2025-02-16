@@ -1,7 +1,7 @@
 import { Button, Container, Hidden, Image, View } from "reshaped";
 import * as style from "#/components/Header/style.css";
-import { routes } from "#/constants/routes";
 import { t } from "#/shared/i18n";
+import { routes } from "#/shared/route";
 
 export const Header = () => {
   return (

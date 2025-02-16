@@ -3,10 +3,10 @@ import { useEffect, useState } from "preact/hooks";
 import { Button, Container, Icon, Text, View } from "reshaped";
 import { Footer } from "#/components/Footer";
 import { Header } from "#/components/Header";
-import { routes } from "#/constants/routes";
 import { ArrowRight } from "#/icons";
 import * as style from "#/pages/index/style.css";
 import { t } from "#/shared/i18n";
+import { routes } from "#/shared/route";
 
 export const IndexPage = () => {
   return (

@@ -5,6 +5,7 @@ import { PageWithCTA } from "#/components/PageWithCTA";
 import { Question } from "#/components/Question";
 import * as style from "#/pages/steps/start/style.css";
 import { t } from "#/shared/i18n";
+import { route } from "#/shared/route";
 import {
   type StockName,
   calculateStockFrom,
@@ -84,7 +85,11 @@ export const StepsStartPage = () => {
           </Question>
         )}
         renderButton={(props) => (
-          <Button {...props} disabled={!selectedName}>
+          <Button
+            {...props}
+            href={route.steps.stock({ stock: selectedName })}
+            disabled={!selectedName}
+          >
             {t("steps.start.button")}
           </Button>
         )}
