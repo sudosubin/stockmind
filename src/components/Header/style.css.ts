@@ -12,12 +12,3 @@ export const container = style({
   justifyContent: "space-between",
   alignItems: "center",
 });
-
-export const right = style({
-  display: "none",
-  "@media": {
-    "(--rs-viewport-m)": {
-      display: "block",
-    },
-  },
-});

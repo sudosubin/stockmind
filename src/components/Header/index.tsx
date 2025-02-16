@@ -1,4 +1,4 @@
-import { Button, Container, Image, View } from "reshaped";
+import { Button, Container, Hidden, Image, View } from "reshaped";
 import * as style from "#/components/Header/style.css";
 import { routes } from "#/constants/routes";
 import { t } from "#/shared/i18n";
@@ -10,10 +10,12 @@ export const Header = () => {
         <View>
           <Image src="/vite.svg" alt="Logo" width="24px" />
         </View>
-        <View className={style.right}>
-          <Button href={routes.steps.start} color="primary" variant="faded">
-            {t("_.header.start")}
-          </Button>
+        <View>
+          <Hidden hide={{ s: true, m: false }}>
+            <Button href={routes.steps.start} color="primary" variant="faded">
+              {t("_.header.start")}
+            </Button>
+          </Hidden>
         </View>
       </Container>
     </View>
