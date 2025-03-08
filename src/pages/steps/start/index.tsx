@@ -46,6 +46,7 @@ export const StepsStartPage = () => {
         renderHeader={() => <Header />}
         renderContent={() => (
           <Question
+            image="/static/emoji-chart-increasing.svg"
             title={t("steps.start.hero.question.title")}
             description={t("steps.start.hero.question.description")}
             additional={t("steps.start.hero.question.additional")({ from, to })}
