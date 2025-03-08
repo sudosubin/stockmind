@@ -33,7 +33,7 @@ const HeroSection = () => {
   }, [texts]);
 
   return (
-    <View className={style.hero} gap={4} as="section">
+    <View className={style.hero} gap={6} as="section">
       <Text
         variant={{ s: "title-6", m: "title-5", l: "title-3" }}
         align="center"
