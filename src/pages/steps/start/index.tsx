@@ -68,7 +68,10 @@ export const StepsStartPage = () => {
         renderButton={(props) => (
           <Button
             {...props}
-            href={route.steps.stock({ stock: selectedName })}
+            href={route.steps.stock({
+              stock: selectedName,
+              query: { top: selectedName },
+            })}
             disabled={!selectedName}
           >
             {t("steps.start.button")}

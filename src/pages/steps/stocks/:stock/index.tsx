@@ -109,7 +109,8 @@ const UpcomingStockOrResultButton = ({
 }: {
   answers: Record<StockName, StockAnswer>;
 } & ComponentProps<typeof Button>) => {
-  const query = search.steps.stock.serialize({ previous: answers });
+  const { top } = search.steps.stock.deserialize(useRoute().query);
+  const query = search.steps.stock.serialize({ top, previous: answers });
   const stock = calculateUpcomingStock({ answers });
 
   if (stock) {
