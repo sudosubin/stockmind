@@ -23,9 +23,7 @@ export const StockAnswerOption = ({
   onSelect,
 }: Props) => {
   const text = t(`steps.stock.answer.${answer}.text`);
-  const description = t(`steps.stock.answer.${answer}.description`)({
-    price,
-  });
+  const description = t(`steps.stock.answer.${answer}.description`, { price });
   const badge = t(`steps.stock.answer.${answer}.badge`);
   const image = images[answer];
 

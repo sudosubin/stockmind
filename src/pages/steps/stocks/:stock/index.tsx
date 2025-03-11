@@ -61,17 +61,17 @@ const Stock = ({
           title={
             <View align="center" gap={4}>
               <span>
-                {t("steps.stock.hero.question.title")({
+                {t("steps.stock.hero.question.title", {
                   name: t(`_.stock.${stockName}`),
                 })}
               </span>
             </View>
           }
-          description={t("steps.stock.hero.question.description")({
+          description={t("steps.stock.hero.question.description", {
             date: from.date,
             price: from.price,
           })}
-          additional={t("_.shared.referenceData")({
+          additional={t("_.shared.referenceData", {
             from: from.date,
             to: to.date,
           })}

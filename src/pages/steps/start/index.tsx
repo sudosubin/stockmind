@@ -28,7 +28,7 @@ export const StepsStartPage = () => {
             image="/static/emoji-chart-increasing.svg"
             title={t("steps.start.hero.question.title")}
             description={t("steps.start.hero.question.description")}
-            additional={t("_.shared.referenceData")({ from, to })}
+            additional={t("_.shared.referenceData", { from, to })}
           >
             <RadioGroup name="stock">
               <View gap={3} className={style.radios}>
