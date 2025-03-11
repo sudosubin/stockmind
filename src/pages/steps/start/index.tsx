@@ -1,5 +1,5 @@
 import { useMemo, useState } from "preact/hooks";
-import { Button, Card, Image, Radio, RadioGroup, Text, View } from "reshaped";
+import { Avatar, Button, Card, Radio, RadioGroup, Text, View } from "reshaped";
 import { stockClient } from "#/clients/stock-client";
 import { Header } from "#/components/Header";
 import { PageWithCTA } from "#/components/PageWithCTA";
@@ -39,12 +39,7 @@ export const StepsStartPage = () => {
                     <Card key={option.name} selected={isSelected} as="label">
                       <View gap={4} direction="row" align="center">
                         <View.Item>
-                          <Image
-                            src={`/static/${option.name}.svg`}
-                            alt={option.name}
-                            width={8}
-                            className={style.icon}
-                          />
+                          <Avatar src={`/static/${option.name}.svg`} size={8} />
                         </View.Item>
                         <View.Item grow>
                           <Text variant="body-2" weight="medium">

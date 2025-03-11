@@ -5,7 +5,3 @@ export const radios = style({
   maxWidth: "400px",
   paddingTop: "var(--rs-unit-x4)",
 });
-
-export const icon = style({
-  borderRadius: "50%",
-});

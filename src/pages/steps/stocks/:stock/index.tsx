@@ -2,7 +2,7 @@ import * as style from "#/pages/steps/stocks/:stock/style.css";
 import type { ComponentProps } from "preact";
 import { useLocation, useRoute } from "preact-iso";
 import { useMemo, useState } from "preact/hooks";
-import { Button, Image, RadioGroup, View } from "reshaped";
+import { Avatar, Button, RadioGroup, View } from "reshaped";
 import { stockClient } from "#/clients/stock-client";
 import { Header } from "#/components/Header";
 import { PageWithCTA } from "#/components/PageWithCTA";
@@ -50,14 +50,7 @@ const Stock = ({
       renderHeader={() => <Header />}
       renderContent={() => (
         <Question
-          image={
-            <Image
-              src={`/static/${stockName}.svg`}
-              alt={stockName}
-              width={16}
-              className={style.icon}
-            />
-          }
+          image={<Avatar src={`/static/${stockName}.svg`} size={16} />}
           title={
             <View align="center" gap={4}>
               <span>
