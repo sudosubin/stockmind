@@ -113,4 +113,61 @@ export const ko = {
   "steps.stock.answer.3.badge": "0% 미만",
   "steps.stock.button.next": "다음",
   "steps.stock.button.result": "결과 보기",
+  "steps.result.loading.text": "결과를 준비 중이에요",
+  "steps.result.loading.description": (
+    <>
+      주식 예측 결과를 계산하고 있어요
+      <br />
+      잠시만 기다려주세요
+    </>
+  ),
+  "steps.result.5.title": "주식 천재",
+  "steps.result.5.description": (
+    <>
+      당신은 주식 천재!
+      <br />
+      5개의 주식 질문을 모두 맞혔어요
+    </>
+  ),
+  "steps.result.4.title": "주식 박사",
+  "steps.result.4.description": (
+    <>
+      당신을 주식 척척박사로 인정!
+      <br />
+      아래에서 아쉽게 틀린 질문을 확인해보세요
+    </>
+  ),
+  "steps.result.3.title": "주식 나무",
+  "steps.result.3.description": (
+    <>
+      당신은 수익을 얻기에 충분한 주식 나무!
+      <br />
+      아래에서 아쉽게 틀린 질문들을 확인해보세요
+    </>
+  ),
+  "steps.result.2.title": "주식 새싹",
+  "steps.result.2.description": (
+    <>
+      당신은 물을 주면 자라나는 주식 새싹!
+      <br />
+      아래에서 아쉽게 틀린 질문들을 확인해보세요
+    </>
+  ),
+  "steps.result.1.title": "주식 유망주",
+  "steps.result.1.description": (
+    <>
+      당신은 주식 유망주로 성장 중!
+      <br />
+      아래에서 아쉽게 틀린 질문들을 확인해보세요
+    </>
+  ),
+  "steps.result.0.title": "주식 초보",
+  "steps.result.0.description": (
+    <>
+      앞으로는 주식에도 관심을 가져볼까요?
+      <br />
+      아래에서 아쉽게 틀린 질문들을 확인해보세요
+    </>
+  ),
+  "steps.result.button": "공유하기",
 };

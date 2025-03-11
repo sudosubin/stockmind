@@ -1,44 +1,23 @@
 import { useMemo, useState } from "preact/hooks";
 import { Button, Card, Image, Radio, RadioGroup, Text, View } from "reshaped";
+import { stockClient } from "#/clients/stock-client";
 import { Header } from "#/components/Header";
 import { PageWithCTA } from "#/components/PageWithCTA";
 import { Question } from "#/components/Question";
 import * as style from "#/pages/steps/start/style.css";
 import { t } from "#/shared/i18n";
 import { route } from "#/shared/route";
-import {
-  type StockName,
-  calculateStockFrom,
-  calculateStockTo,
-} from "#/shared/stock";
+import type { StockName } from "#/shared/stock";
 
 export const StepsStartPage = () => {
-  const from = useMemo(() => calculateStockFrom(), []);
-  const to = useMemo(() => calculateStockTo(), []);
+  const { from, to } = useMemo(() => stockClient.getDates(), []);
   const [selectedName, setSelectedName] = useState<StockName | null>(null);
 
-  const stocks = [
-    {
-      name: "amazon",
-      displayName: t("_.stock.amazon"),
-      description: t("_.stock.amazon.description"),
-    },
-    {
-      name: "apple",
-      displayName: t("_.stock.apple"),
-      description: t("_.stock.apple.description"),
-    },
-    {
-      name: "nvidia",
-      displayName: t("_.stock.nvidia"),
-      description: t("_.stock.nvidia.description"),
-    },
-    {
-      name: "tesla",
-      displayName: t("_.stock.tesla"),
-      description: t("_.stock.tesla.description"),
-    },
-  ] as { name: StockName; displayName: string; description: string }[];
+  const options = stockClient.getStockNames().map((stockName) => ({
+    name: stockName,
+    displayName: t(`_.stock.${stockName}`),
+    description: t(`_.stock.${stockName}.description`),
+  }));
 
   return (
     <>
@@ -53,30 +32,30 @@ export const StepsStartPage = () => {
           >
             <RadioGroup name="stock">
               <View gap={3} className={style.radios}>
-                {stocks.map((stock) => {
-                  const isSelected = selectedName === stock.name;
+                {options.map((option) => {
+                  const isSelected = selectedName === option.name;
 
                   return (
-                    <Card key={stock.name} selected={isSelected} as="label">
+                    <Card key={option.name} selected={isSelected} as="label">
                       <View gap={4} direction="row" align="center">
                         <View.Item>
                           <Image
-                            src={`/static/${stock.name}.svg`}
-                            alt={stock.name}
+                            src={`/static/${option.name}.svg`}
+                            alt={option.name}
                             width={8}
                             className={style.icon}
                           />
                         </View.Item>
                         <View.Item grow>
                           <Text variant="body-2" weight="medium">
-                            {stock.displayName}
+                            {option.displayName}
                           </Text>
-                          <Text variant="body-3">{stock.description}</Text>
+                          <Text variant="body-3">{option.description}</Text>
                         </View.Item>
                         <Radio
-                          value={stock.name}
+                          value={option.name}
                           checked={isSelected}
-                          onChange={() => setSelectedName(stock.name)}
+                          onChange={() => setSelectedName(option.name)}
                         />
                       </View>
                     </Card>
