@@ -1,5 +1,7 @@
 import "#/shared/modern-normalize.css";
+import "pretendard/dist/web/static/pretendard-subset.css";
 import "reshaped/themes/reshaped/theme.css";
+import "#/shared/font.css";
 import { StockPage } from "#/pages/steps/stocks/:stock";
 import { render } from "preact";
 import { LocationProvider, Route, Router } from "preact-iso";
