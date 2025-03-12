@@ -9,6 +9,7 @@ import { PageWithCTA } from "#/components/PageWithCTA";
 import { Question } from "#/components/Question";
 import { StockAnswerOption } from "#/components/StockAnswerOption";
 import { stocks } from "#/constants/stocks";
+import { useSearchStepsStock } from "#/hooks/useSearchStepsStock";
 import { t } from "#/shared/i18n";
 import { route, search } from "#/shared/route";
 import {
@@ -19,14 +20,14 @@ import {
 
 export const StockPage = () => {
   const location = useLocation();
-  const { params, query } = useRoute();
+  const { params } = useRoute();
 
   if (!isValidStockName(params.stock)) {
     location.route("/404");
     return null;
   }
 
-  const { previous } = search.steps.stock.deserialize(query);
+  const { previous } = useSearchStepsStock();
   // use `key` to reset the state when the stock path changes
   return (
     <Stock key={params.stock} stockName={params.stock} previous={previous} />
@@ -102,7 +103,7 @@ const UpcomingStockOrResultButton = ({
 }: {
   answers: Record<StockName, StockAnswer>;
 } & ComponentProps<typeof Button>) => {
-  const { top } = search.steps.stock.deserialize(useRoute().query);
+  const { top } = useSearchStepsStock();
   const query = search.steps.stock.serialize({ top, previous: answers });
   const stock = calculateUpcomingStock({ answers });
 

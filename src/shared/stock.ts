@@ -23,3 +23,7 @@ export enum StockAnswer {
 export const isValidStockName = (name: string): name is StockName => {
   return Object.keys(stocks).includes(name);
 };
+
+export const formatRate = (rate: number) => {
+  return rate > 0 ? `+${rate - 100}%` : `-${100 - rate}%`;
+};

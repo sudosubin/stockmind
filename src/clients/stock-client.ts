@@ -30,6 +30,13 @@ export class StockClient {
     };
   }
 
+  public getStock({ stockName }: { stockName: StockName }) {
+    return this.stocks[stockName].map(({ date, price }) => ({
+      date: new Date(date),
+      price,
+    }));
+  }
+
   public getStockNames() {
     return Object.keys(this.stocks) as StockName[];
   }
@@ -79,13 +86,17 @@ export class StockClient {
     ];
   }
 
+  public getAnswer({ stockName }: { stockName: StockName }) {
+    const { from, to } = this.getStockDates({ stockName });
+    const rate = Math.floor((to.price / from.price) * 100);
+    const answer = this.calculateStockAnswer(rate);
+    return { stockName, from, to, answer, rate };
+  }
+
   public getAnswers() {
-    const stocks = this.getStockNames().map((stockName) => {
-      const { from, to } = this.getStockDates({ stockName });
-      const rate = Math.floor((to.price / from.price) * 100);
-      const answer = this.calculateStockAnswer(rate);
-      return { stockName, from, to, answer, rate };
-    });
+    const stocks = this.getStockNames().map((stockName) =>
+      this.getAnswer({ stockName }),
+    );
 
     return {
       rising: {

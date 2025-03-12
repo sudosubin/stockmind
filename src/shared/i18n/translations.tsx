@@ -43,6 +43,7 @@ export const ko = {
       가장 많이 올랐을까요?
     </>
   ),
+  "steps.start.hero.question.title.nowrap": "어떤 주식이 가장 많이 올랐을까요?",
   "steps.start.hero.question.description":
     "2024년을 기준으로 가장 많이 올랐을 것 같은 주식을 선택해주세요.",
   "steps.start.button": "다음",
@@ -53,6 +54,8 @@ export const ko = {
       얼마나 올랐을까요?
     </>
   ),
+  "steps.stock.hero.question.title.nowrap": ({ name }: { name: string }) =>
+    `${name} 주식은 얼마나 올랐을까요?`,
   "steps.stock.hero.question.description": ({
     date,
     price,
@@ -169,5 +172,51 @@ export const ko = {
       아래에서 아쉽게 틀린 질문들을 확인해보세요
     </>
   ),
+  "steps.result.stock.increase": ({
+    from,
+    to,
+    rate,
+  }: { from: number; to: number; rate: number }) => {
+    return (
+      <>
+        <Text weight="medium" as="span">
+          {from.toLocaleString()}원
+        </Text>
+        에서{" "}
+        <Text weight="medium" as="span">
+          {to.toLocaleString()}원
+        </Text>
+        으로{" "}
+        <Text weight="medium" as="span">
+          {rate}%
+        </Text>{" "}
+        상승했어요.
+      </>
+    );
+  },
+  "steps.result.stock.decrease": ({
+    from,
+    to,
+    rate,
+  }: { from: number; to: number; rate: number }) => {
+    return (
+      <>
+        <Text weight="medium" as="span">
+          {from.toLocaleString()}원
+        </Text>
+        에서{" "}
+        <Text weight="medium" as="span">
+          {to.toLocaleString()}원
+        </Text>
+        으로{" "}
+        <Text weight="medium" as="span">
+          {rate}%
+        </Text>{" "}
+        하락했어요.
+      </>
+    );
+  },
+  "steps.result.answer.correct": "정답",
+  "steps.result.answer.incorrect": "오답",
   "steps.result.button": "공유하기",
 };
