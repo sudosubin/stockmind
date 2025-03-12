@@ -8,7 +8,7 @@ export const Header = () => {
     <View className={style.view} as="header">
       <Container className={style.container}>
         <View>
-          <Image src="/vite.svg" alt="Logo" width="24px" />
+          <Image src="/favicon.svg" alt="Logo" width="28px" />
         </View>
         <View>
           <Hidden hide={{ s: true, m: false }}>
