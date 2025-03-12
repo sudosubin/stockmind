@@ -4,44 +4,12 @@ import { stockClient } from "#/clients/stock-client";
 import { Header } from "#/components/Header";
 import { PageWithCTA } from "#/components/PageWithCTA";
 import { StockGraph } from "#/components/StockGraph";
-import { useFakeLoading } from "#/hooks/useFakeLoading";
 import { useSearchStepsStock } from "#/hooks/useSearchStepsStock";
 import * as style from "#/pages/steps/result/style.css";
 import { t } from "#/shared/i18n";
 import { type StockName, formatRate } from "#/shared/stock";
 
 export const StepsResultPage = () => {
-  const { isLoading } = useFakeLoading({ duration: 2_000 });
-  return isLoading ? <StepsResultLoading /> : <StepsResult />;
-};
-
-const StepsResultLoading = () => {
-  return (
-    <PageWithCTA
-      renderHeader={() => <Header />}
-      renderContent={() => (
-        <View className={style.container} gap={6} as="section">
-          <Image
-            src="/static/emoji-animated-robot.webp"
-            alt="robot"
-            width={32}
-          />
-          <View gap={4} maxWidth="320px">
-            <Text variant="featured-2" align="center" weight="medium">
-              {t("steps.result.loading.text")}
-            </Text>
-            <Text variant="body-1" align="center" color="neutral-faded">
-              {t("steps.result.loading.description")}
-            </Text>
-          </View>
-        </View>
-      )}
-      renderButton={() => null}
-    />
-  );
-};
-
-const StepsResult = () => {
   const stockNames = stockClient.getStockNames();
   const onShare = async () => {
     await navigator.share({ url: window.location.href });

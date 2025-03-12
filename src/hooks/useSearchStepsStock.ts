@@ -3,5 +3,8 @@ import { search } from "#/shared/route";
 
 export const useSearchStepsStock = () => {
   const { query } = useRoute();
-  return search.steps.stock.deserialize(query);
+
+  return query.state
+    ? search.steps.result.deserialize(query as { state: string })
+    : search.steps.stock.deserialize(query);
 };

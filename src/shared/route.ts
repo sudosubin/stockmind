@@ -9,6 +9,9 @@ export interface Query {
     top?: StockName;
     [key: `previous.${string}`]: StockAnswer;
   };
+  "steps.result": {
+    state?: string;
+  };
 }
 
 export const route = {
@@ -21,7 +24,11 @@ export const route = {
       const params_ = params.toString() ? `?${params.toString()}` : "";
       return `${routes.steps.stock.replace(":stock", stock)}${params_}`;
     },
-    result: ({ query }: { query: Query["steps.stock"] }) => {
+    loading: ({ query }: { query: Query["steps.stock"] }) => {
+      const params = new URLSearchParams(query);
+      return `${routes.steps.loading}?${params.toString()}`;
+    },
+    result: ({ query }: { query: Query["steps.result"] }) => {
       const params = new URLSearchParams(query);
       return `${routes.steps.result}?${params.toString()}`;
     },
@@ -33,6 +40,7 @@ export const routes = {
   steps: {
     start: "/steps/start",
     stock: "/steps/stocks/:stock",
+    loading: "/steps/loading",
     result: "/steps/result",
   },
 };
@@ -64,6 +72,19 @@ export const search = {
         ) as Record<StockName, StockAnswer>;
 
         return { top, previous };
+      },
+    },
+    result: {
+      serialize: ({
+        top,
+        previous,
+      }: { top: StockName; previous: Record<StockName, StockAnswer> }) => {
+        const state = btoa(JSON.stringify({ top, previous }));
+        return { state };
+      },
+      deserialize: (query: { state: string }) => {
+        const parsed = JSON.parse(atob(query.state));
+        return parsed;
       },
     },
   },

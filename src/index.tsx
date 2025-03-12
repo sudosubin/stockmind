@@ -6,6 +6,7 @@ import { LocationProvider, Route, Router } from "preact-iso";
 import { Reshaped } from "reshaped";
 import { NotFound } from "#/pages/404";
 import { IndexPage } from "#/pages/index";
+import { StepsLoadingPage } from "#/pages/steps/loading";
 import { StepsResultPage } from "#/pages/steps/result";
 import { StepsStartPage } from "#/pages/steps/start";
 import { routes } from "#/shared/route";
@@ -18,6 +19,7 @@ const App = () => {
           <Route path={routes.index} component={IndexPage} />
           <Route path={routes.steps.start} component={StepsStartPage} />
           <Route path={routes.steps.stock} component={StockPage} />
+          <Route path={routes.steps.loading} component={StepsLoadingPage} />
           <Route path={routes.steps.result} component={StepsResultPage} />
           <Route default component={NotFound} />
         </Router>

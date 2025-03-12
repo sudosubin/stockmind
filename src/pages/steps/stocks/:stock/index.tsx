@@ -116,7 +116,7 @@ const UpcomingStockOrResultButton = ({
   }
 
   return (
-    <Button {...props} href={route.steps.result({ query })}>
+    <Button {...props} href={route.steps.loading({ query })}>
       {t("steps.stock.button.result")}
     </Button>
   );
