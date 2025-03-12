@@ -43,6 +43,9 @@ const StepsResultLoading = () => {
 
 const StepsResult = () => {
   const stockNames = stockClient.getStockNames();
+  const onShare = async () => {
+    await navigator.share({ url: window.location.href });
+  };
 
   return (
     <PageWithCTA
@@ -57,7 +60,7 @@ const StepsResult = () => {
         </View>
       )}
       renderButton={(props) => (
-        <Button {...props} color="primary" size="large">
+        <Button {...props} color="primary" size="large" onClick={onShare}>
           {t("steps.result.button")}
         </Button>
       )}
