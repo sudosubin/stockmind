@@ -1,5 +1,5 @@
 {
-  description = "openapi-python";
+  description = "stockmind";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
