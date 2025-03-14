@@ -73,7 +73,7 @@ const StockGraphChart = ({
       <LinearGradient
         id={id}
         from={color}
-        to="#fff"
+        to="var(--rs-color-background-page)"
         fromOpacity={0.4}
         toOpacity={0.1}
       />

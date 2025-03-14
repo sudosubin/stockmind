@@ -15,7 +15,7 @@ export const Footer = () => {
       <View>
         <Button
           href="https://github.com/sudosubin/stockmind"
-          color="media"
+          variant="ghost"
           icon={<Icon svg={GitHub} color="neutral-faded" size={4} />}
           size="small"
           rounded
