@@ -51,6 +51,7 @@
     "simple-git-hooks": "^2.11.1",
     "sort-package-json": "^2.14.0",
     "terser": "^5.39.0",
-    "vite": "^6.1.0"
+    "vite": "^6.1.0",
+    "vite-plugin-html": "^3.2.2"
   }
 }
