@@ -60,7 +60,7 @@ const HeroSection = () => {
 
   return (
     <View align="center" gap={4} maxWidth="320px" paddingBottom={6}>
-      <Image src={image} width={32} />
+      <Image src={image} width={32} height={32} />
       <Text variant="featured-2" align="center" weight="medium">
         {t(`steps.result.${count}.title`)}
       </Text>

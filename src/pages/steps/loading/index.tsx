@@ -29,6 +29,7 @@ export const StepsLoadingPage = () => {
             src="/static/emoji-animated-robot.webp"
             alt="robot"
             width={32}
+            height={32}
           />
           <View gap={4} maxWidth="320px">
             <Text variant="featured-2" align="center" weight="medium">

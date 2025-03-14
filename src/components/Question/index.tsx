@@ -19,7 +19,9 @@ export const Question = ({
   return (
     <View className={style.container} gap={4} as="section">
       {typeof image !== "string" && !!image && image}
-      {typeof image === "string" && <Image src={image} width={16} />}
+      {typeof image === "string" && (
+        <Image src={image} width={16} height={16} />
+      )}
       <Text variant={{ s: "title-6", m: "title-5" }} align="center" as="h1">
         {title}
       </Text>

@@ -31,7 +31,7 @@ export const StockAnswerOption = ({
     <Card selected={isSelected} as="label">
       <View gap={4} direction="row" align="center">
         <View.Item>
-          <Image src={image} width={8} />
+          <Image src={image} width={8} height={8} />
         </View.Item>
         <View.Item grow>
           <Text variant="body-2" weight="medium">
