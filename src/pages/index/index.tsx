@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState } from "react";
 import { Button, Container, Icon, Text, View } from "reshaped";
+import { Link } from "wouter";
 import { Footer } from "#/components/Footer";
 import { Header } from "#/components/Header";
 import { ArrowRight } from "#/icons";
@@ -51,24 +52,25 @@ const HeroSection = () => {
           {t("index.hero.description")}
         </Text>
       </View>
-      <Button
-        href={routes.steps.start}
-        color="primary"
-        endIcon={<Icon svg={ArrowRight} size={5} />}
-        size="large"
-      >
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={texts[index]}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            {texts[index]}
-          </motion.span>
-        </AnimatePresence>
-      </Button>
+      <Link href={routes.steps.start}>
+        <Button
+          color="primary"
+          endIcon={<Icon svg={ArrowRight} size={5} />}
+          size="large"
+        >
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={texts[index]}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              {texts[index]}
+            </motion.span>
+          </AnimatePresence>
+        </Button>
+      </Link>
     </View>
   );
 };

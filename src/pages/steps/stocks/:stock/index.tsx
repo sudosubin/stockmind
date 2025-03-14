@@ -1,8 +1,8 @@
 import * as style from "#/pages/steps/stocks/:stock/style.css";
-import type { ComponentProps } from "preact";
-import { useLocation, useRoute } from "preact-iso";
-import { useMemo, useState } from "preact/hooks";
+import { type ComponentProps, useMemo, useState } from "react";
 import { Avatar, Button, RadioGroup, View } from "reshaped";
+import { Redirect, useParams } from "wouter";
+import { Link } from "wouter";
 import { stockClient } from "#/clients/stock-client";
 import { Header } from "#/components/Header";
 import { PageWithCTA } from "#/components/PageWithCTA";
@@ -19,12 +19,10 @@ import {
 } from "#/shared/stock";
 
 export const StockPage = () => {
-  const location = useLocation();
-  const { params } = useRoute();
+  const params = useParams<{ stock: StockName }>();
 
   if (!isValidStockName(params.stock)) {
-    location.route("/404");
-    return null;
+    return <Redirect to="/404" />;
   }
 
   const { previous } = useSearchStepsStock();
@@ -109,16 +107,16 @@ const UpcomingStockOrResultButton = ({
 
   if (stock) {
     return (
-      <Button {...props} href={route.steps.stock({ stock, query })}>
-        {t("steps.stock.button.next")}
-      </Button>
+      <Link href={route.steps.stock({ stock, query })}>
+        <Button {...props}>{t("steps.stock.button.next")}</Button>
+      </Link>
     );
   }
 
   return (
-    <Button {...props} href={route.steps.loading({ query })}>
-      {t("steps.stock.button.result")}
-    </Button>
+    <Link href={route.steps.loading({ query })}>
+      <Button {...props}>{t("steps.stock.button.result")}</Button>
+    </Link>
   );
 };
 

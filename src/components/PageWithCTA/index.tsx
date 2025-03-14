@@ -1,4 +1,4 @@
-import type { ComponentProps, ReactNode } from "preact/compat";
+import type { ComponentProps, ReactNode } from "react";
 import { type Button, Container, View } from "reshaped";
 import * as style from "#/components/PageWithCTA/style.css";
 

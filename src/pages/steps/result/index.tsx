@@ -1,4 +1,4 @@
-import { useMemo } from "preact/hooks";
+import { useMemo } from "react";
 import { Avatar, Badge, Button, Card, Image, Text, View } from "reshaped";
 import { stockClient } from "#/clients/stock-client";
 import { Header } from "#/components/Header";

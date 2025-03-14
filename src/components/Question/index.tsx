@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactNode } from "preact/compat";
+import type { PropsWithChildren, ReactNode } from "react";
 import { Image, Text, View } from "reshaped";
 import * as style from "#/components/Question/style.css";
 

@@ -6,8 +6,7 @@ import { Group } from "@visx/group";
 import { ParentSize } from "@visx/responsive";
 import { scaleLinear, scaleTime } from "@visx/scale";
 import { AreaClosed, LinePath } from "@visx/shape";
-import type { ComponentProps } from "preact";
-import { useMemo } from "preact/hooks";
+import { type ComponentProps, useMemo } from "react";
 
 interface Props {
   id: string;

@@ -1,5 +1,6 @@
-import { useMemo, useState } from "preact/hooks";
+import { useMemo, useState } from "react";
 import { Avatar, Button, Card, Radio, RadioGroup, Text, View } from "reshaped";
+import { Link } from "wouter";
 import { stockClient } from "#/clients/stock-client";
 import { Header } from "#/components/Header";
 import { PageWithCTA } from "#/components/PageWithCTA";
@@ -61,16 +62,16 @@ export const StepsStartPage = () => {
           </Question>
         )}
         renderButton={(props) => (
-          <Button
-            {...props}
+          <Link
             href={route.steps.stock({
               stock: selectedName,
               query: { top: selectedName },
             })}
-            disabled={!selectedName}
           >
-            {t("steps.start.button")}
-          </Button>
+            <Button {...props} disabled={!selectedName}>
+              {t("steps.start.button")}
+            </Button>
+          </Link>
         )}
       />
     </>

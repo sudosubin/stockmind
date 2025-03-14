@@ -10,6 +10,19 @@
       "correctness": {
         "noUnusedImports": "error"
       },
+      "nursery": {
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "preact": "Cannot import preact directly. Use react instead.",
+              "preact/compat": "Cannot import preact directly. Use react instead.",
+              "preact/hooks": "Cannot import preact directly. Use react instead.",
+              "wouter-preact": "Cannot import wouter-preact directly. Use wouter instead."
+            }
+          }
+        }
+      },
       "suspicious": {
         "noExplicitAny": "off"
       }

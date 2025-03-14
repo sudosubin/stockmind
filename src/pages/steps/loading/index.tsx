@@ -1,6 +1,6 @@
-import { useLocation } from "preact-iso";
-import { useEffect } from "preact/hooks";
+import { useEffect } from "react";
 import { Image, Text, View } from "reshaped";
+import { useLocation, useSearchParams } from "wouter";
 import { Header } from "#/components/Header";
 import { PageWithCTA } from "#/components/PageWithCTA";
 import { useFakeLoading } from "#/hooks/useFakeLoading";
@@ -9,14 +9,17 @@ import { t } from "#/shared/i18n";
 import { route, search } from "#/shared/route";
 
 export const StepsLoadingPage = () => {
-  const location = useLocation();
+  const [_, navigate] = useLocation();
+  const [searchParams, __] = useSearchParams();
+  const query = Object.fromEntries(searchParams);
+
   const { isLoading } = useFakeLoading({ duration: 2_000 });
 
   useEffect(() => {
     if (!isLoading) {
-      const deserialized = search.steps.stock.deserialize(location.query);
+      const deserialized = search.steps.stock.deserialize(query);
       const { state } = search.steps.result.serialize(deserialized);
-      location.route(route.steps.result({ query: { state } }));
+      navigate(route.steps.result({ query: { state } }));
     }
   });
 
