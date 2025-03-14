@@ -4,5 +4,5 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [preact(), vanillaExtractPlugin()],
-  resolve: { alias: { wouter: "wouter-preact" } },
+  resolve: { alias: { lodash: "lodash-es", wouter: "wouter-preact" } },
 });
