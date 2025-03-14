@@ -10,7 +10,7 @@ import { routes } from "#/shared/route";
 
 export const App = () => {
   return (
-    <Reshaped theme="reshaped" defaultColorMode="light">
+    <Reshaped theme="reshaped">
       <Switch>
         <Route path={routes.index} component={IndexPage} />
         <Route path={routes.steps.start} component={StepsStartPage} />
